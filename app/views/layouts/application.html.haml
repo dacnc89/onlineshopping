@@ -8,8 +8,35 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
+    %nav#nav
+      #page_nav
+        = link_to 'Home', root_path
+        = link_to 'Shop', products_path
+        = link_to 'About', store_about_path
+        = link_to 'FAQs', store_faqs_path
+        = link_to 'Contact', store_contact_path
+      
+      
+      #sign_in
+      
+        -if user_signed_in?
+          = link_to "Logout", destroy_user_session_path, method: :delete
+        -else
+          = link_to "Login", new_user_session_path
+          = link_to "Register", new_user_registration_path
+          
+    %main
       = render 'layouts/messages'
       = yield
+
+    %footer
+      Copyright © 2016 Shopping Online 
+      = link_to 'Home', root_path 
+      |
+      = link_to 'Shop', products_path
+      |
+      = link_to 'About', store_about_path
+      |
+      = link_to 'FAQs', store_faqs_path
+      |
+      = link_to 'Contact', store_contact_path

@@ -7,7 +7,13 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      .nav_link
+        = link_to 'Home', root_path, class: 'navbar-brand'
+        = link_to 'Shop', products_path, class: 'navbar-brand'
+        = link_to 'About', store_about_path, class: 'navbar-brand'
+        = link_to 'FAQs', store_faqs_path, class: 'navbar-brand'
+        = link_to 'Contact', store_contact_path, class: 'navbar-brand'
+
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'

@@ -1,0 +1,12 @@
+
+%tr.lineItem
+
+  %td.itemQuantity
+    x
+    = line_item.quantity
+  %td.itemTitle
+    = line_item.product.title
+  %td.itemPrice
+    = number_to_currency(line_item.product.price)
+
+
