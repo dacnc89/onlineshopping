@@ -5,7 +5,9 @@
     = f.input :name
     = f.input :address
     = f.input :email
-    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method'
+    = f.select :pay_type, colcection: Order::PAYMENT_TYPES, prompt: "Select your age"
+
+  %br
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, value: 'Place Order'
