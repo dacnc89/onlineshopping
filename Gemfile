@@ -7,6 +7,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 2.0'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'font-awesome-rails'
+gem 'will_paginate', '~> 3.1.0'
 group :development, :test do
   gem 'byebug'
 end
@@ -14,7 +18,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-gem 'kaminari'
+# gem 'kaminari'
 gem 'puma'
 gem 'bootstrap-sass'
 gem 'devise'

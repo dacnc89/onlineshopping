@@ -1,70 +1,18 @@
-// Place all the styles related to the Products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.gridRow{
-  width: 100%;
-  .span16{
-    float: left;
-    width: 19%;
-    height: 100px;
-    position: relative;
-    .refine{
-      background-color: #4d4f53;
-      strong{
-        line-height: 35px;
-        margin-left: 15px;
-        font-size: 20px;
-        color: white;
-      }
-    }
-    .category{
-      background-color: #d7d7d8;
-      .title{
-        margin-left: 15px;
-        line-height: 40px;
-      }
-    }
-  }
-  
-  .span64{
-    float: right;
-    width: 80%;
-    margin: 0 0 0 1%;
-    
-    .productRow{
-      // background-color: red;
-      width: 100%;
-      height: 275px;
-      clear: both;
-    }  
-      .productDetail:hover{
-        // opacity: 0.7;
-        border: 1px solid #504A44;
-        a{
-          border-bottom: 1px solid #504A44;
-        }
-      }
-      .productDetail{
-        // opacity: 1.0;
-        position: relative;
-        width: 25%;
-        border: 1px solid #dbdbdb;
-        float: left;
-        .image img{
-          width: 180px;
-          height: 180px;
-        }
-        .title, .des, .price{
-          margin-top: 5px;
-          height: 15px;
-          text-align: center;
-          margin-bottom: 5px;
-        }
-        .btnAddToCart{
-          margin-top: 5px;
-          margin-bottom: 5px;
-          text-align: center;
-        }
-      }
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.refine{
+  min-height: 700px;
+  background-color: red;
+  .row1 {
+    background-color: green;
+    margin-top: 0px;
+    padding: 15px ;
+    padding-left: 15px;
+    width: auto;
   }
 }
+
+

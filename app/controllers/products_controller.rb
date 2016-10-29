@@ -5,8 +5,16 @@ class ProductsController < ApplicationController
 
   # GET /products
   # GET /products.json
+  # def index
+    # @products = Product.order(:title).page(params[:page])
+  # end
+
   def index
-    @products = Product.order(:title).page(params[:page])
+    searcher = Product.search do
+      fulltext params[:search]
+      paginate page: params[:page],per_page: 16
+    end
+    @products = searcher.results
   end
 
   # GET /products/1

@@ -9,8 +9,11 @@ class Product < ActiveRecord::Base
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be URL for GIF, JPG or PNG image.'
   }
-
-  paginates_per 16
+  searchable do 
+    text :title, :description
+  end
+  # self.per_page = 16
+  # paginates_per 16
 
   private
     def ensure_no_referenced_by_any_line_item
