@@ -15,7 +15,7 @@
       - @products.each do |product|
         .col-md-3.col-xs-6.productDetail.text-center.well
           .image.img-rounded
-            = image_tag(product.image_url)
+            = link_to image_tag(product.image.url),product
           .title
             = link_to product.title, product
           .des

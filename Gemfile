@@ -11,6 +11,9 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'font-awesome-rails'
 gem 'will_paginate', '~> 3.1.0'
+# use papaerclips
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "aws-sdk", '~> 2'
 group :development, :test do
   gem 'byebug'
 end

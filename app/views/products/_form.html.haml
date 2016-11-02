@@ -1,11 +1,13 @@
-= simple_form_for(@product) do |f|
+= simple_form_for @product,url: products_path do |f|
   = f.error_notification
 
   .form-inputs
-    = f.input :title
-    = f.input :description
-    = f.input :image_url
-    = f.input :price
+    = f.input :title,label: 'Tên sản phẩm'
+    = f.input :description, label: 'Mô tả'
+    / = f.input :image_url
+    = f.input :price, label: 'Giá'
+    = f.input :image, as: :file, label: 'Hình ảnh sản phẩm'
+    = f.input :category, collection: Category.all, label: 'Loại'
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, 'Tạo sản phẩm'
