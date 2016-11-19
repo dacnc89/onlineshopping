@@ -1,0 +1,28 @@
+%p#notice= notice
+.category-name
+  = @category.name
+
+.product-list
+  - @category.products.each do |product|
+    .product-box
+      .image
+        = link_to image_tag(product.image.url),product
+      .title
+        = link_to product.title, product
+      .des
+        = product.description
+      .price
+        = number_to_currency(product.price, unit: "VNĐ ")
+      .buttonclass
+        = button_to  line_items_path(product_id: product), class: 'add-button', remote: true do
+          %i.fa.fa-cart-plus
+    
+  .col-md-12.text-center.digg_pagination
+    .pagination
+      = will_paginate @products
+  .clear
+
+
+= link_to 'Edit', edit_category_path(@category)
+\|
+= link_to 'Back', categories_path

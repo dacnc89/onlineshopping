@@ -2,14 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#cart{
+#cartt{
   // background: #F9F4EF;
   width: 100%;
   text-align: center;
+  // max-height: 200px;
+  // overflow-y: scroll;
   // border: 1px solid #dbdbdb;
   // border-radius: 15px;
-  color: red;
-
+  // color: red;
+  padding-bottom: 10px;
+  .line-items-box{
+    max-height: 120px;
+    overflow-y: scroll;
+  }
   tr > th,tr > td{
     text-align: center;
   table{
@@ -24,9 +30,10 @@
     height: 20px;
     .itemTitle, .itemQuantity, .itemPrice, .itemPriceTotal{
       width: 25%;
-    }
-    .totalLine{
-
-    }
   }
+  }
+  .totalLine{
+    padding: 5px;
+  }
+  
 }

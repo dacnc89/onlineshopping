@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :orders
   resources :line_items
   resources :carts
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
 
   get 'store/index'
 
-  resources :products
+  resources :products do
+    get :who_bought, on: :member
+  end
   devise_for :users
   
   root 'store#index'#, as: 'store'

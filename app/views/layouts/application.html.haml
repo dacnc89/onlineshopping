@@ -7,95 +7,140 @@
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  .container
     .header
-      .row.row1
-        .inline.col-md-2.col-xs-6.logo
-          %a{href: "http://localhost:3000"}
-            %p TM.VN
-        .inline.col-md-5.col-xs-12.search-box
-          = form_tag products_path, method: :get do
-            %p
-              = text_field_tag :search, params[:search], class: 'search-input'
-              = submit_tag "Tìm", name: nil, class: 'search-btn'
+      .container
+        #logo
+          %p TMshop
 
-        #numofproducts.inline.col-md-1.col-xs-4.cart.text-center
-          = fa_icon "shopping-cart"
-          = @cart.total_line
-          =link_to "Giỏ hàng", root_path
-        .inline.col-md-3.col-xs-8.account
-          -if user_signed_in?
-            = link_to 'Đăng xuất', destroy_user_session_path, method: :delete, class: 'logout'
-          -else
-            = link_to 'Đăng nhập', new_user_session_path, class: 'login'
-            = link_to 'Đăng ký', new_user_registration_path, class: 'signup'
-      .row.row2.visible-md.visible-lg
-        .inline.col-md-2
-          = link_to 'Trang chủ', root_path
-        .inline.col-md-2
-          = link_to 'Thời trang Nam', products_path
-        .inline.col-md-2
-          = link_to 'Thời trang Nữ', products_path
-        .inline.col-md-2
-          = link_to 'Thời trang bé Trai', products_path
-        .inline.col-md-2
-          = link_to 'Thời trang bé Gái', products_path
-        .inline.col-md-2
-          = link_to 'Liên hệ với chúng tôi', store_contact_path
+        #main-menu
+          %ul.search.hidden-xs
+            %li
+              = form_tag products_path, method: :get do
+                = text_field_tag :search, params[:search], class: 'search-input'
+                = submit_tag "Tìm", name: nil, class: 'search-btn'
+                
+
+          %ul
+            %li.hidden-md.hidden-sm.hidden-xs
+              %a{href: "http://localhost:3000/", title: "Thời trang TM shop"} Trang chủ
+            %li
+              %a{href: "http://localhost:3000/products", title: "Thời trang nam TM shop"}
+                %span Sản phẩm
+                %i.fa.fa-caret-down
+              %ul
+                %li
+                  %a{href: "http://localhost:3000/categories/1", title: "Thời trang nam TM shop"} Thời trang Nam
+                %li
+                  %a{href: "http://localhost:3000/categories/2", title: "Thời trang nữ TM shop"} Thời trang Nữ
+                %li
+                  %a{href: "http://localhost:3000/categories/3", title: "Thời trang bé trai TM shop"} Thời trang Bé Trai
+                %li
+                  %a{href: "http://localhost:3000/categories/4", title: "Thời trang bé gái TM shop"} Thời trang Bé Gái
+            %li.hidden-md.hidden-sm.hidden-xs
+              %a{href: "http://localhost:3000/"}
+                %span TM shop
+                %i.fa.fa-caret-down
+              %ul
+                %li
+                  %a{href: "http://localhost:3000/store/about", title: "Thời trang nam TM shop"} Giới Thiệu
+                %li
+                  %a{href: "http://localhost:3000/store/contact", title: "Thời trang nữ TM shop"} Liên Hệ
+            %li.hidden-md.hidden-sm.hidden-xs
+              %a{href: "#", title: ""}
+                %i.fa.fa-user
+                %span Tài Khoản
+                %i.fa.fa-caret-down
+              %ul
+                - if user_signed_in?
+                  %li
+                  %a{href: "http://localhost:3000/users/sign_out", method: :delete, title: ""} Đăng Xuất
+                - else
+                  %li
+                    %a{href: "http://localhost:3000/users/sign_in", title: ""} Đăng Nhập
+                  %li
+                    %a{href: "http://localhost:3000/users/sign_up", title: ""} Tạo Tài Khoản
+            %li
+              %a{href: "#"}
+                %i.fa.fa-shopping-cart
+                %strong Giỏ Hàng
+                .num-of-cart
+                  %p
+                    = @cart.total_line
+
+              %ul
+                .cart-box
+                  = render partial: 'carts/cart', object: @cart
+
+      .clear
+              
     .main
-      = render 'layouts/messages'
-      = yield
-
-
+      .container    
+        = render 'layouts/messages'
+        = yield
     .footer
-      .col-md-3.col-xs-4.col1
-        %h5 Những trang chính
+      .clear
+      .container
         %ul
+          %h5 Những trang chính
           %li
-            %a{href: "http://localhost:3000/thoitrangnam"} 
-              Thời trang Nam
+            %a{href: "http://localhost:3000/categories/1", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-male
+              %span Thời trang Nam
           %li
-            %a{href: "http://localhost:3000/thoitrangnam"} 
-              Thời trang Nữ
-          %li 
-            %a{href: "http://localhost:3000/thoitrangnam"} 
-              Thời trang bé Trai
-          %li 
-            %a{href: "http://localhost:3000/thoitrangnam"} 
-              Thời trang bé Gái
-
-      .col-md-3.col-xs-4.col2
-        %h5 Tài khoản của bạn
+            %a{href: "http://localhost:3000/categories/2", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-female
+              %span Thời trang Nữ
+          %li
+            %a{href: "http://localhost:3000/categories/3", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-arrow-right
+              %span Thời trang bé Trai
+          %li
+            %a{href: "http://localhost:3000/categories/4", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-arrow-right
+              %span Thời trang bé Gái
         %ul
-          %li 
-            %a{href: "http://localhost:3000/users/sign_up"} 
-              Đăng ký
-          %li 
-            %a{href: "http://localhost:3000/users/sign_in"} 
-              Đăng nhập
-      .col-md-3.col-xs-4.col3
-        %h5 Về TM.VN
+          %h5 Tài khoản của bạn
+          -if user_signed_in?
+            %li
+              %a{href: "http://localhost:3000/users/sign_out", method: :delete, title: "Thời trang nữ TM shop"} 
+                %i.fa.fa-sign-out
+                %span Đăng Xuất
+            
+          -else  
+            %li
+              %a{href: "http://localhost:3000/users/sign_up", title: "Thời trang nữ TM shop"}
+                %i.fa.fa-rocket
+                %span Đăng Ký
+            %li
+              %a{href: "http://localhost:3000/users/sign_in", title: "Thời trang nữ TM shop"} 
+                %i.fa.fa-sign-in
+                %span Đăng Nhập
         %ul
-          %li 
-            %a{href: "http://localhost:3000/store/about"} 
-              Giới thiệu
-
-      .col-md-3.col-xs-12.col4
-        %h5 Chúng tôi trên mạng xã hội
-        %li
-          %a{href: "#{}"}
-            = fa_icon "facebook"
-            Facebook
-        %li
-          %a{href: "#{}"}
-            = fa_icon "twitter"
-            Twitter
-        %li
-          %a{href: "#{}"}
-            = fa_icon "google-plus"
-            Google plus
-      .row.col-md-12.col5.text-center
-        %p &copy; 2016  Bản quyên bởi tm.vn
-
-
-    
+          %h5 Về chúng tôi
+          %li
+            %a{href: "http://localhost:3000/store/about", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-address-card-o
+              %span Giới thiệu
+          %li
+            %a{href: "http://localhost:3000/store/contact", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-address-card
+              %span Liên hệ
+        %ul.social
+          %h5 Chúng tôi trên mạng Xã hội
+          %li
+            %a{href: "#", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-facebook
+              %span Chúng tôi trên facebook
+          %li
+            %a{href: "#", title: "Thời trang nữ TM shop"}
+              %i.fa.fa-twitter
+              %span Chúng tôi trên Twitter
+          %li
+            %a{href: "#", title: "Thời trang nữ TM shop"} 
+              %i.fa.fa-google-plus
+              %span Chúng tôi trên Google + 
+          
+      .copyright
+        %p &copy; 2016 by TMshop
+        
+        

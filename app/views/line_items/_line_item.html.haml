@@ -8,5 +8,8 @@
     = line_item.product.title
   %td.itemPrice
     = number_to_currency(line_item.product.price)
+  %td
+    %a.deleteItem{href: ""  }
+      %i.fa.fa-trash
 
 

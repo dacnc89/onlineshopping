@@ -1,0 +1,40 @@
+/
+  #homeCarousel.carousel.slide.visible-md.visible-lg
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    / Items
+    .carousel-inner
+      / Item 1
+      .item.active
+        = image_tag 'slide3'
+        .container
+          .carousel-caption
+            %h1 Bootstrap 3 Carousel Layout
+            %p This is an example layout with carousel that uses the Bootstrap 3 styles.
+            %p
+              %a.btn.btn-lg.btn-primary{:href => "http://getbootstrap.com"} Learn More
+      / Item 2
+      .item
+        = image_tag 'slide1'
+        .container
+          .carousel-caption
+            %h1 Changes to the Grid
+            %p Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.
+            %p
+              %a.btn.btn-large.btn-primary{:href => "#"} Learn more
+      / Item 3
+      .item
+        = image_tag 'slide2'
+        .container
+          .carousel-caption
+            %h1 Percentage-based sizing
+            %p With "mobile-first" there is now only one percentage-based grid.
+            %p
+              %a.btn.btn-large.btn-primary{:href => "#"} Browse gallery
+    / Controls
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.icon-prev
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %span.icon-next

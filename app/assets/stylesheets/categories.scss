@@ -1,0 +1,67 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// css for show page ------------
+.category-name{
+  width: 100%;
+  height: 40px;
+  font-size: 33px;
+  color: #f0300b;
+  border-bottom: 1px solid #ff9966;
+}
+
+.product-list{margin-top: 10px;}
+
+.product-box{
+  opacity: 0.9;
+  width: 21%;
+  height: 415px;
+  text-align: center;
+  float: left;
+  margin: 0 2% 0 2%;
+  padding: 5px;
+  transition: opacity 0.5s linear 0s, color 0.5s linear 0s;
+}
+.product-box:hover{
+  opacity: 1;
+  border: 1px solid #ff9966;
+}
+.product-box img{
+  width: 100%;
+  height: 315px;
+}
+.product-box .title{
+  font-size: 14px;
+}
+.product-box a{
+  list-style-type: none;
+}
+.product-box a:hover{
+  list-style-type: none;
+  background-color: white;
+  color: #ff9966;
+
+}
+.product-box .button, .add-button{
+  font-size: 25px;
+  background-color: white;
+  border: none;
+  background-color: none;
+}
+.product-box  .add-button:hover{
+  color: #f0300b;
+}
+
+/*
+  ================= @media jquery for product-box ===============
+*/
+
+@media screen and (max-width: 992px){
+  .product-box{
+    padding: 0;
+    width: 31.3333%;
+    margin: 0 1% 0 1%;
+    height: 450px;
+  }
+}

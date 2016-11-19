@@ -11,6 +11,8 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'font-awesome-rails'
 gem 'will_paginate', '~> 3.1.0'
+#update sprockets
+gem 'sprockets'
 # use papaerclips
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem "aws-sdk", '~> 2'

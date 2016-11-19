@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   include CurrentCart
   before_action :set_cart
-
+  
   protect_from_forgery with: :exception
 
 end

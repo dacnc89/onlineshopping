@@ -4,7 +4,6 @@ class CreateProducts < ActiveRecord::Migration
       t.belongs_to :category, index: true, foreign_key: true
       t.string :title
       t.text :description
-      #t.string :image_url
       t.decimal :price, precision: 8, scale: 2
 
       t.timestamps null: false

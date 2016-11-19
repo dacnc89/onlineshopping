@@ -1,18 +1,22 @@
 /
-#cart
-  %h2 Your Cart
-  = button_to 'Empty cart', @cart, method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-warning'
+#cartt
+  /  
+    %h3 Giỏ hàng của bạn
+    = button_to 'Xóa tất cả', @cart, method: :delete, data: {confirm: 'Bạn có chắc chắc xóa tất cả các sản phẩm trong giỏ hàng của bạn?'}, class: 'btn btn-warning'
   %br
-  %table
-    = render(cart.line_items)
+  .line-items-box
+    %table
+      = render partial: 'line_items/line_item', collection: @cart.line_items
   
   
   .totalLine
     %strong Total : 
-    = number_to_currency(@cart.total_price)
+    = number_to_currency(@cart.total_price, unit: "VNĐ ")
+  /
     %br Total line
     = @cart.total_line
-  = button_to 'Checkout', new_order_path, method: :get, class: 'btn btn-info'
+  = button_to 'Đặt hàng', new_order_path, method: :get, class: 'btn btn-info'
+
 /
   #cart
-    = @cart.total_line
+  = @cart.total_line

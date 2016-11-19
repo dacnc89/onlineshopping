@@ -21,24 +21,3 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(function () {
-    $('#homeCarousel').carousel({
-        interval:4000,
-        pause: "false"
-    });
-
-    $('#homeCarousel').mouseover(function(){
-      $('#homeCarousel').carousel('pause');
-    })
-
-    $('#homeCarousel').mouseout(function(){
-      $('#homeCarousel').carousel('cycle');
-    })
-
-    $('#playButton').click(function () {
-        $('#homeCarousel').carousel('cycle');
-    });
-    $('#pauseButton').click(function () {
-        $('#homeCarousel').carousel('pause');
-    });
-});

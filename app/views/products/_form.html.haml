@@ -1,10 +1,9 @@
-= simple_form_for @product,url: products_path do |f|
+= simple_form_for @product,:html => { :multipart => true } do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :title,label: 'Tên sản phẩm'
     = f.input :description, label: 'Mô tả'
-    / = f.input :image_url
     = f.input :price, label: 'Giá'
     = f.input :image, as: :file, label: 'Hình ảnh sản phẩm'
     = f.input :category, collection: Category.all, label: 'Loại'
