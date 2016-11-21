@@ -1,0 +1,14 @@
+%h1 Admin#index
+%br
+%h3 Products
+
+- @products.each do |product|
+  .row
+    .product-row
+      = link_to image_tag(product.image.url),product
+      = link_to product.title, product
+      = product.description
+      = number_to_currency(product.price, unit: "VNĐ ")
+      = link_to 'Edit',edit_product_path(product)
+      = link_to 'Show', product
+      = link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }

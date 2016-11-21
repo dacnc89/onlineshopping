@@ -64,8 +64,7 @@
                 %i.fa.fa-shopping-cart
                 %strong Giỏ Hàng
                 .num-of-cart
-                  %p
-                    = @cart.total_line
+                  = render partial: 'carts/cartnum', object: @cartnum
 
               %ul
                 .cart-box

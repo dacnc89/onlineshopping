@@ -1,66 +1,94 @@
-#slider
-  .slide.active 
-    = image_tag("slide1.jpg")
-    .caption
-      %h5 for slide1
-  .slide
-    = image_tag("slide2.jpg")
-    .caption
-      %h5 for slide2
-  .slide 
-    = image_tag("slide3.jpg")
-    .caption
-      %h5 for slide3
-  /
-    .slide 
-      = image_tag("slide1.jpg")
-      .caption
-        %h5 for slide4
-  .button-control
-    .button-left
-      %i.fa.fa-chevron-left
-    .button-right
-      %i.fa.fa-chevron-right
-  .bullets
-    %i.button.active.fa.fa-circle
-    %i.button.fa.fa-circle
-    %i.button.fa.fa-circle
-    / %i.button4.fa.fa-circle
+
+#myCarousel.carousel.slide.visible-md.visible-lg{"data-ride" => "carousel"}
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  / Items
+  .carousel-inner
+    / Item 1
+    .item.active
+      = image_tag 'slide3'
+      .container
+        .carousel-caption
+          %h1 Online shopping TMshop
+          %p Cùng trải nghiệm TMshop và mua hàng trực tuyến :D
+          %p
+            %a.btn.btn-lg.btn-primary{:href => "http://localhost:3000"} Tìm hiểu thêm
+    / Item 2
+    .item
+      = image_tag 'slide1'
+      .container
+        .carousel-caption
+          %h1 Changes to the Grid
+          %p Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.
+          %p
+            %a.btn.btn-large.btn-primary{:href => "#"} Learn more
+    / Item 3
+    .item
+      = image_tag 'slide2'
+      .container
+        .carousel-caption
+          %h1 Percentage-based sizing
+          %p With "mobile-first" there is now only one percentage-based grid.
+          %p
+            %a.btn.btn-large.btn-primary{:href => "#"} Browse gallery
+  / Controls
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.icon-prev
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.icon-next
+
+.clear
+
+
+
+
+
 #slider.new-product
   %h3 Sản phẩm mới
-  .slider-product-new
-    - @products.limit(20).offset(7).each do |product|
-      .product-box
-        .image
-          = link_to image_tag(product.image.url),product
-        .title
-          = link_to product.title, product
-        .des
-          = product.description
-        .price
-          = number_to_currency(product.price, unit: "VNĐ ")
-    .slide
-    .button-control
-      .button-left
-        %i.fa.fa-chevron-left
-      .button-right
-        %i.fa.fa-chevron-right
+  #myCarousel.new-product-box.carousel.slide.visible-md.visible-lg{"data-ride" => "carousel"}
+  
+    .carousel-inner
+      / Item 1
+      .item.active.row
+        - @products.limit(4).each do |product|
+          .col-md-3
+            = link_to image_tag(product.image.url),product
+            
+      / Item 2
+      .item.row
+        - @products.limit(4).offset(4).each do |product2| 
+          .col-md-3
+            = link_to image_tag(product2.image.url), product2
+          
+      
+    / Controls
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.icon-prev
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %span.icon-next
 #slider.top-sell-product
   %h3 Sản phẩm bán chạy
-  .slider-top-sell-product
-    - @products.each do |product|
-      .product-box
-        .image
-          = link_to image_tag(product.image.url),product
-        .title
-          = link_to product.title, product
-        .des
-          = product.description
-        .price
-          = number_to_currency(product.price, unit: "VNĐ ")
-    .button-control
-      .button-left
-        %i.fa.fa-chevron-left
-      .button-right
-        %i.fa.fa-chevron-right
+  #myCarousel.new-product-box.carousel.slide.visible-md.visible-lg{"data-ride" => "carousel"}
+  
+    .carousel-inner
+      / Item 1
+      .item.active.row
+        - @products.limit(4).offset(30).each do |product|
+          .col-md-3
+            = link_to image_tag(product.image.url), product
+            
+      / Item 2
+      .item.row
+        - @products.limit(4).offset(34).each do |product2| 
+          .col-md-3
+            = link_to image_tag(product2.image.url),product2
+          
+      
+    / Controls
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.icon-prev
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %span.icon-next
 

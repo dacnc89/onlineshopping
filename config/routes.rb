@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  get 'admin/index'
+
+  devise_for :admins
   resources :categories
   resources :orders
   resources :line_items
