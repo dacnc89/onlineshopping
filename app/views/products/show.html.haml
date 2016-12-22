@@ -1,19 +1,20 @@
-%p#notice= notice
+.text-center
+  %p#notice= notice
 
-%p
-  %b Title:
-  = @product.title
-%p
-  %b Description:
-  = @product.description
-%p
-  %b Price:
-  = @product.price
-%p
-  %b Image :
-  = image_tag @product.image.url
+  %p
+    %b Tên Sản phẩm:
+    = @product.title
+  %p
+    %b Mô tả:
+    = @product.description
+  %p
+    %b Giá:
+    = @product.price
+  %p
+    %b Hình ảnh :
+    = image_tag @product.image.url
 
--if admin_signed_in?
-  = link_to 'Edit', edit_product_path(@product)
-  \|
-= link_to 'Back', products_path
+  -if admin_signed_in?
+    = link_to 'Edit', edit_product_path(@product)
+    \|
+  = link_to 'Back', products_path

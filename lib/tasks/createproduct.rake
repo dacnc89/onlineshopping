@@ -7,7 +7,7 @@ namespace :createproduct do
         :title => "Female #{num}",
         :price => 4*num,
         :description => "This is Product for Female #{num}",
-        :image => File.open("/home/comp/Pictures/donam#{num}.jpg"))
+        :image => File.open("/home/dac/Pictures/donam#{num}.jpg"))
     end
   end
 
@@ -19,11 +19,11 @@ namespace :createproduct do
         :title => "Male #{num}",
         :price => 4*num,
         :description => "This is Product for male #{num}",
-        :image => File.open("/home/comp/Pictures/donu#{num}.jpg"))
+        :image => File.open("/home/dac/Pictures/donu#{num}.jpg"))
     end
   end
 
-  desc "TODO"
+  desc "betrai"
   task betrai: :environment do
     (1..15).each do |num|
       Product.create(
@@ -31,11 +31,11 @@ namespace :createproduct do
         :title => "Boy #{num}",
         :price => 4*num,
         :description => "This is Product for Boy #{num}",
-        :image => File.open("/home/comp/Pictures/dobetrai#{num}.jpg"))
+        :image => File.open("/home/dac/Pictures/dobetrai#{num}.jpg"))
     end
   end
 
-  desc "TODO"
+  desc "begai"
   task begai: :environment do
     (1..15).each do |num|
       Product.create(
@@ -43,7 +43,7 @@ namespace :createproduct do
         :title => "Girl #{num}",
         :price => 4*num,
         :description => "This is Product for Girl #{num}",
-        :image => File.open("/home/comp/Pictures/dobegai#{num}.jpg"))
+        :image => File.open("/home/dac/Pictures/dobegai#{num}.jpg"))
     end
   end
 

@@ -5,34 +5,34 @@
     %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
     %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
   / Items
-  .carousel-inner
+  #slider.carousel-inner
     / Item 1
     .item.active
-      = image_tag 'slide3'
+      = image_tag 'sl3'
       .container
         .carousel-caption
           %h1 Online shopping TMshop
-          %p Cùng trải nghiệm TMshop và mua hàng trực tuyến :D
+          %p Cùng trải nghiệm TMshop và mua hàng trực tuyến 
           %p
             %a.btn.btn-lg.btn-primary{:href => "http://localhost:3000"} Tìm hiểu thêm
     / Item 2
     .item
-      = image_tag 'slide1'
+      = image_tag 'sl1'
       .container
         .carousel-caption
-          %h1 Changes to the Grid
-          %p Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.
+          %h1 Mua sắm món hàng bạn thích
+          %p Thỏa sức mua sắm bất kỳ mặt hàng nào mà bạn ưa thích 
           %p
-            %a.btn.btn-large.btn-primary{:href => "#"} Learn more
+            %a.btn.btn-large.btn-primary{:href => "#"} Mua sắm ngay
     / Item 3
     .item
-      = image_tag 'slide2'
+      = image_tag 'sl2'
       .container
         .carousel-caption
-          %h1 Percentage-based sizing
-          %p With "mobile-first" there is now only one percentage-based grid.
+          %h1 Tiện lợi, giao hàng nhanh
+          %p Giao hàng nhanh trong vòng 24h
           %p
-            %a.btn.btn-large.btn-primary{:href => "#"} Browse gallery
+            %a.btn.btn-large.btn-primary{:href => "#"} Câu hỏi thường gặp khi mua hàng trực tuyến
   / Controls
   %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
     %span.icon-prev

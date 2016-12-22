@@ -1,7 +1,9 @@
 /
 #cartt
+  %br
   /  
     %h3 Giỏ hàng của bạn
+  - if @cart.total_line > 0
     = button_to 'Xóa tất cả', @cart, method: :delete, data: {confirm: 'Bạn có chắc chắc xóa tất cả các sản phẩm trong giỏ hàng của bạn?'}, class: 'btn btn-warning'
   %br
   .line-items-box
@@ -10,12 +12,15 @@
   
   
   .totalLine
-    %strong Total : 
-    = number_to_currency(@cart.total_price, unit: "VNĐ ")
   /
     %br Total line
     = @cart.total_line
-  = button_to 'Đặt hàng', new_order_path, method: :get, class: 'btn btn-info'
+  - if @cart.total_line > 0
+    %strong Total : 
+    = number_to_currency(@cart.total_price, unit: "VNĐ ")
+    = button_to 'Đặt hàng', new_order_path, method: :get, class: 'btn btn-info'
+  - else
+    %p Giỏ hàng của bạn đang trống !
 
 /
   #cart
