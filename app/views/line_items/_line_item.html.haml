@@ -9,7 +9,6 @@
   %td.itemPrice
     = number_to_currency(line_item.product.price)
   %td
-    %a.deleteItem{href: ""  }
-      %i.fa.fa-trash
+    = number_to_currency(line_item.total_price)
 
 

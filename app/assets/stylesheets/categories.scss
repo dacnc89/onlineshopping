@@ -13,6 +13,7 @@
 
 .product-list{margin-top: 10px;}
 
+
 .product-box{
   opacity: 0.9;
   width: 21%;
@@ -63,5 +64,23 @@
     width: 31.3333%;
     margin: 0 1% 0 1%;
     height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .product-box{
+    padding: 0;
+    width: 45%;
+    margin: 0 1% 0 1%;
+    // height: 315px; 
+  }
+}
+
+@media screen and (max-width: 320px){
+  .product-box{
+    padding: 0;
+    width: 98%;
+    margin: 0 1% 0 1%;
+    // height: 270px;
   }
 }
